@@ -1,0 +1,45 @@
+from fastapi import FastAPI, Depends, HTTPException
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+
+app = FastAPI(
+    title="Clinical Trials Data Quality API",
+    description="API for the Clinical Trials Data Quality & Analytics Challenge",
+    version="1.0.0"
+)
+
+security = HTTPBearer()
+
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
+
+@app.post("/auth/login")
+def login(username: str, password: str):
+    if username == "reviewer" and password == "clinical123":
+        return {
+            "access_token": "clinical-trials-review-token",
+            "token_type": "bearer"
+        }
+
+    raise HTTPException(
+        status_code=401,
+        detail="Invalid username or password"
+    )
+
+
+@app.get("/protected")
+def protected(
+    credentials: HTTPAuthorizationCredentials = Depends(security)
+):
+    if credentials.credentials != "clinical-trials-review-token":
+        raise HTTPException(
+            status_code=401,
+            detail="Invalid token"
+        )
+
+    return {
+        "message": "Authentication successful",
+        "route": "protected"
+    }
