@@ -18,29 +18,6 @@ This project processes clinical trial data, performs data quality checks, and pr
 - Docker support
 - Automated API and data-quality tests
 
-## Project Structure
-
-```text
-clinical data quality/
-├── app/
-│   └── main.py
-├── data/
-│   └── processed/
-│       └── clean_trials_data.csv
-├── notebooks/
-│   └── clinical_trial_notebook.ipynb
-├── test/
-│   └── test_data_quality.py
-├── tests/
-│   └── test_api.py
-├── reports/
-├── scripts/
-├── Dockerfile
-├── docker-compose.yml
-├── requirements.txt
-├── README.md
-└── .gitignore
-
 
 ##1. Data Profiling 
 
