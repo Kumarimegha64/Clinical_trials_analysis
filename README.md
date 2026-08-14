@@ -43,102 +43,39 @@ clinical data quality/
 
 
 
+## Data Profiling
 
-
-**1. Data Profiling**
-
-The dataset was profiled before analysis to identify completeness, consistency, uniqueness, validity, and potential anomalies.
+The dataset was profiled before analysis to identify completeness, consistency, uniqueness, validity, and potential data-quality risks.
 
 The profiling process included:
 
-Row and column counts
-Missing-value analysis
-Null percentages
-Cardinality analysis
-Duplicate detection
-Data-type consistency
-Categorical-value distributions
-Date validation
-Enrollment validation
-Required-column validation
-Referential-integrity considerations
-Geographic consistency
-Status and phase consistency
+**1. Completeness**
 
-The profiling was performed using Python/Pandas and SQL-based validation queries.
+- Calculated null/missing-value rates.
+- Identified fields with significant missingness.
+- Assessed the impact of missing values on downstream analysis.
 
-**2. Data Cleaning and Transformation**
+**2. Uniqueness**
 
-The raw clinical-trial data was transformed into a cleaner analytical dataset.
+- Checked for duplicate NCT IDs.
+- Verified uniqueness of clinical-trial identifiers.
 
-Key transformations included:
+**3. Validity**
 
-Standardizing column names
-Standardizing date fields
-Converting date columns to appropriate date formats
-Creating a cleaned clinical-trials dataset
-Standardizing categorical values
-Extracting country information from location data
-Creating useful analytical categories
-Handling missing values explicitly
-Identifying duplicate or suspicious records
-Identifying unusually high enrollment values
-Validating required fields
-Preparing the dataset for analysis and API consumption
+- Checked date formats and date relationships.
+- Identified implausible enrollment values.
+- Reviewed valid phase and status categories.
 
-The final processed dataset is:
+**4. Consistency**
 
-data/processed/clean_trials_data.csv
+- Standardized categorical values.
+- Reviewed inconsistent status and phase labels.
+- Standardized country and date information.
 
-**3. Data Quality Assessment**
+**5. Referential Integrity**
 
-The data-quality assessment focused on the following dimensions:
-
-Quality Dimension	Assessment
-Completeness	Missing values were identified and quantified
-Validity	Invalid dates, categories and enrollment values were investigated
-Consistency	Status, phase, country and categorical values were reviewed
-Uniqueness	Duplicate records and NCT identifiers were checked
-Referential Integrity	Relationships between study and related entities were considered
-Accuracy	Implausible values were flagged for review
-Timeliness	Date fields and trial activity over time were evaluated
-
-The intentionally imperfect nature of the dataset was treated as part of the analysis rather than automatically removing every questionable record.
-
-**4. Data Quality Test Plan**
-
-Automated tests were implemented using Pytest.
-
-The test suite validates important aspects of the project, including:
-
-API root endpoint availability
-API health endpoint availability
-Clinical-trial dataset availability
-Dataset is not empty
-Required columns exist
-Trial search endpoint availability
-API response validity
-
-Additional data-quality rules considered during the project include:
-
-Duplicate NCT IDs
-Missing required identifiers
-Missing important fields
-Invalid date ranges
-Completion date before start date
-Invalid enrollment values
-Unexpected phase values
-Unexpected status values
-Missing foreign-key references
-Geographic inconsistencies
-
-The automated test suite can be executed with:
-
-pytest
-
-Expected result:
-
-7 passed
+- Checked relationships between studies and related records.
+- Identified missing or orphaned references where applicable.
 
 **5. SQL Analysis**
 
@@ -282,6 +219,7 @@ Missing outcomes	37 (0.46%)	Limits outcome analysis
 Very high enrollment	24 records	Requires validation against source data
 Missing/inconsistent categorical values	Identified during profiling	Can distort grouping and comparisons
 Missing/invalid dates	Identified during validation	Can affect duration and trend analysis
+
 **12. Significant Data Quality Issue**
 Missing Intervention Information
 
@@ -315,7 +253,7 @@ THEN flag record for review.
 
 The pipeline should also track missingness over time and report the percentage of affected records.
 
-13. Visualization
+**13. Visualization**
 
 The project includes Power BI-based visualization of the clinical-trial dataset.
 
