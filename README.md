@@ -1,6 +1,6 @@
-# Clinical Trials Data Quality & Analytics API
+# Clinical Data Quality
 
-A Python-based clinical trials data quality and analytics project.
+End-to-end clinical trial data-quality and analytics project covering **data profiling, SQL analysis, Python EDA, Power BI, FastAPI, testing, authentication, and Docker**.
 
 ## Project Overview
 
@@ -18,10 +18,6 @@ This project processes clinical trial data, performs data quality checks, and pr
 - Docker support
 - Automated API and data-quality tests
 
-
-# Clinical Data Quality
-
-End-to-end clinical trial data-quality and analytics project covering **data profiling, SQL analysis, Python EDA, Power BI, FastAPI, testing, authentication, and Docker**.
 
 ## 📁 Project Structure
 
