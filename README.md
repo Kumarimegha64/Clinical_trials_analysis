@@ -18,6 +18,30 @@ This project processes clinical trial data, performs data quality checks, and pr
 - Docker support
 - Automated API and data-quality tests
 
+## Project Structure
+
+```text
+clinical data quality/
+├── app/
+│   └── main.py
+├── data/
+│   └── processed/
+│       └── clean_trials_data.csv
+├── notebooks/
+│   └── clinical_trial_notebook.ipynb
+├── test/
+│   └── test_data_quality.py
+├── tests/
+│   └── test_api.py
+├── reports/
+├── scripts/
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+├── README.md
+└── .gitignore
+
+
 
 **1. Data Profiling**
 
@@ -63,6 +87,7 @@ Preparing the dataset for analysis and API consumption
 The final processed dataset is:
 
 data/processed/clean_trials_data.csv
+
 **3. Data Quality Assessment**
 
 The data-quality assessment focused on the following dimensions:
@@ -112,6 +137,7 @@ pytest
 Expected result:
 
 7 passed
+
 **5. SQL Analysis**
 
 SQL was used for data validation, transformation, aggregation, and analytical queries.
@@ -134,6 +160,7 @@ Geographic analysis
 The SQL queries are stored under:
 
 sql/
+
 **6. Exploratory Data Analysis**
 
 Exploratory analysis was performed using Python and Pandas.
