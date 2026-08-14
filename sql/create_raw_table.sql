@@ -1,0 +1,31 @@
+DROP TABLE IF EXISTS raw_trials;
+
+CREATE TABLE raw_trials (
+    rank INTEGER,
+    nct_number VARCHAR(30),
+    title TEXT,
+    acronym VARCHAR(100),
+    status VARCHAR(100),
+    study_results VARCHAR(100),
+    conditions TEXT,
+    interventions TEXT,
+    outcome_measures TEXT,
+    sponsor_collaborators TEXT,
+    gender VARCHAR(50),
+    age TEXT,
+    phases VARCHAR(100),
+    enrollment INTEGER,
+    funded_bys VARCHAR(100),
+    study_type VARCHAR(100),
+    study_designs TEXT,
+    other_ids TEXT,
+    start_date TEXT,
+    primary_completion_date TEXT,
+    completion_date TEXT,
+    first_posted TEXT,
+    results_first_posted TEXT,
+    last_update_posted TEXT,
+    locations TEXT,
+    study_documents TEXT,
+    url TEXT
+);
