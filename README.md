@@ -19,7 +19,7 @@ This project processes clinical trial data, performs data quality checks, and pr
 - Automated API and data-quality tests
 
 
-##1. Data Profiling 
+**1. Data Profiling**
 
 The dataset was profiled before analysis to identify completeness, consistency, uniqueness, validity, and potential anomalies.
 
@@ -112,7 +112,7 @@ pytest
 Expected result:
 
 7 passed
-5. SQL Analysis
+**5. SQL Analysis**
 
 SQL was used for data validation, transformation, aggregation, and analytical queries.
 
@@ -134,7 +134,7 @@ Geographic analysis
 The SQL queries are stored under:
 
 sql/
-6. Exploratory Data Analysis
+**6. Exploratory Data Analysis**
 
 Exploratory analysis was performed using Python and Pandas.
 
@@ -155,7 +155,7 @@ Potential enrollment outliers
 
 The analysis explicitly considers the impact of data-quality issues when interpreting results.
 
-7. Trial Landscape Overview
+**7. Trial Landscape Overview**
 
 The dataset contains approximately:
 
@@ -173,7 +173,7 @@ Many trials allow participation across genders.
 
 These results should be interpreted together with the identified data-quality limitations.
 
-8. Completion and Data Reliability
+**8. Completion and Data Reliability**
 
 Trial completion was evaluated using available status and date information.
 
@@ -199,7 +199,7 @@ Incomplete records from recent years can make time-based comparisons less reliab
 
 Therefore, completion-related conclusions are based only on records considered sufficiently reliable for the specific analysis.
 
-9. Enrollment Analysis
+**9. Enrollment Analysis**
 
 Enrollment was analyzed across trial characteristics.
 
@@ -219,7 +219,7 @@ Instead, they were flagged as potential data-quality issues requiring validation
 
 This approach avoids confusing legitimate high-volume trials with data-entry errors.
 
-10. Geographic and Duration Analysis
+**10. Geographic and Duration Analysis**
 
 Geographic analysis examined:
 
@@ -242,7 +242,7 @@ Completion dates before start dates
 
 were considered unsuitable for reliable duration calculations.
 
-11. Data Quality Findings
+**11. Data Quality Findings**
 
 Important quality findings included:
 
@@ -253,7 +253,7 @@ Missing outcomes	37 (0.46%)	Limits outcome analysis
 Very high enrollment	24 records	Requires validation against source data
 Missing/inconsistent categorical values	Identified during profiling	Can distort grouping and comparisons
 Missing/invalid dates	Identified during validation	Can affect duration and trend analysis
-12. Significant Data Quality Issue
+**12. Significant Data Quality Issue**
 Missing Intervention Information
 
 One of the most significant issues identified was missing intervention information.
