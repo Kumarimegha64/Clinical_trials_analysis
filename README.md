@@ -41,7 +41,7 @@ clinical data quality/
 ├── README.md
 └── .gitignore
 
-1. Data Profiling
+#1. Data Profiling
 
 The dataset was profiled before analysis to identify completeness, consistency, uniqueness, validity, and potential anomalies.
 
@@ -63,7 +63,7 @@ Status and phase consistency
 
 The profiling was performed using Python/Pandas and SQL-based validation queries.
 
-2. Data Cleaning and Transformation
+#2. Data Cleaning and Transformation
 
 The raw clinical-trial data was transformed into a cleaner analytical dataset.
 
@@ -85,7 +85,7 @@ Preparing the dataset for analysis and API consumption
 The final processed dataset is:
 
 data/processed/clean_trials_data.csv
-3. Data Quality Assessment
+#3. Data Quality Assessment
 
 The data-quality assessment focused on the following dimensions:
 
