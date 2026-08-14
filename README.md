@@ -42,7 +42,7 @@ clinical data quality/
 └── .gitignore
 
 
-**1. Data Profiling **
+##1. Data Profiling 
 
 The dataset was profiled before analysis to identify completeness, consistency, uniqueness, validity, and potential anomalies.
 
